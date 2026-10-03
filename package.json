@@ -1,0 +1,41 @@
+{
+  "name": "Locally",
+  "productName": "Locally",
+  "version": "1.0.0",
+  "description": "Share videos, music and photos from this computer to any device on your Wi-Fi.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.locally",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "server.js",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "server.js"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  }
+}
